@@ -14,6 +14,7 @@ class AppRoutes {
     MenuOption(route: 'avatar', icon: Icons.supervised_user_circle_outlined, name: 'Circle Avatar', screen: const AvatarScreen()),
     MenuOption(route: 'animated', icon: Icons.play_circle_outline_rounded, name: 'Animated Screen', screen: const AnimatedScreen()),
     MenuOption(route: 'inputs', icon: Icons.input_rounded, name: 'Text Inputs', screen: const InputsScreen()),
+    MenuOption(route: 'sliders', icon: Icons.check_box_outlined, name: 'Slider & Checks', screen: const SliderScreen()),
   ];
 
   static const initialRoute = 'home';
