@@ -11,6 +11,7 @@ class AppRoutes {
     MenuOption(route: 'listview2', icon: Icons.list_sharp, name: 'ListView Tipo 2', screen: const Listview2Screen()),
     MenuOption(route: 'alert', icon: Icons.add_alert_outlined, name: 'Alert Screen', screen: const AlertScreen()),
     MenuOption(route: 'card', icon: Icons.credit_card, name: 'Card Screen', screen: const CardScreen()),
+    MenuOption(route: 'avatar', icon: Icons.supervised_user_circle_outlined, name: 'Circle Avatar', screen: const AvatarScreen()),
   ];
 
   static const initialRoute = 'home';
