@@ -8,6 +8,8 @@ class CustomInputField extends StatelessWidget {
   final IconData? suffixIcon;
   final TextInputType? keyboardType;
   final bool obscureText;
+  final String formProperty;
+  final Map<String, dynamic> formValues;
 
   const CustomInputField({
     Key? key,
@@ -15,9 +17,11 @@ class CustomInputField extends StatelessWidget {
     this.labelText,
     this.helperText,
     this.icon,
-    this.suffixIcon, 
-    this.keyboardType, 
+    this.suffixIcon,
+    this.keyboardType,
     this.obscureText = false,
+    required this.formProperty,
+    required this.formValues,
   }) : super(key: key);
 
   @override
@@ -43,7 +47,7 @@ class CustomInputField extends StatelessWidget {
         icon: icon == null ? null : Icon(icon),
       ),
       onChanged: (value) {
-        // print(value);
+        formValues[formProperty] = value;
       },
     );
   }
