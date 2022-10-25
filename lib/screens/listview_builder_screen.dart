@@ -37,6 +37,8 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
     add5();
     isLoading = false;
     setState(() {});
+    if (scrollController.position.pixels + 100 <= scrollController.position.maxScrollExtent) return;
+    scrollController.animateTo(scrollController.position.pixels + 120, duration: const Duration(seconds: 3), curve: Curves.fastOutSlowIn);
   }
 
   @override
@@ -51,18 +53,19 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
         child: Stack(
           children: [
             ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                controller: scrollController,
-                itemCount: imagesIds.length,
-                itemBuilder: (context, index) {
-                  return FadeInImage(
-                      width: double.infinity,
-                      height: 300,
-                      fit: BoxFit.cover,
-                      placeholder: const AssetImage('assets/jar-loading.gif'),
-                      image: NetworkImage('https://picsum.photos/500/300?image=${imagesIds[index]}'));
-                }),
-            Positioned(bottom: 40, left: size.width * 0.5 - 30, child: const LoadingIcon())
+              physics: const BouncingScrollPhysics(),
+              controller: scrollController,
+              itemCount: imagesIds.length,
+              itemBuilder: (context, index) {
+                return FadeInImage(
+                    width: double.infinity,
+                    height: 300,
+                    fit: BoxFit.cover,
+                    placeholder: const AssetImage('assets/jar-loading.gif'),
+                    image: NetworkImage('https://picsum.photos/500/300?image=${imagesIds[index]}'));
+              },
+            ),
+            if (isLoading) Positioned(bottom: 40, left: size.width * 0.5 - 30, child: const LoadingIcon())
           ],
         ),
       ),
