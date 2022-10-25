@@ -15,6 +15,7 @@ class AppRoutes {
     MenuOption(route: 'animated', icon: Icons.play_circle_outline_rounded, name: 'Animated Screen', screen: const AnimatedScreen()),
     MenuOption(route: 'inputs', icon: Icons.input_rounded, name: 'Text Inputs', screen: const InputsScreen()),
     MenuOption(route: 'sliders', icon: Icons.check_box_outlined, name: 'Slider & Checks', screen: const SliderScreen()),
+    MenuOption(route: 'listviewbuilder', icon: Icons.list_alt_outlined, name: 'InfiniteScroll & Pull to Refresh', screen: const ListViewBuilderScreen()),
   ];
 
   static const initialRoute = 'home';
